@@ -1,0 +1,168 @@
+html {
+  font-size: 16px; }
+
+body {
+  margin: 0; }
+
+.navbar--top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.logo, .profile-pic {
+  width: 55px;
+  height: 55px;
+  padding: 10px; }
+
+.profile-pic {
+  float: right; }
+
+.form--nav {
+  display: inline-block;
+  width: 50%; }
+
+#search--input {
+  display: inline-block;
+  line-height: 1.5;
+  margin-top: 20px; }
+
+.search-menu {
+  position: absolute;
+  z-index: 50; }
+
+.dropdown-item {
+  background: #E2E2E2;
+  list-style: none;
+  border: 1px solid #e0e0e0;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  margin: 0;
+  padding: 20px;
+  -webkit-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  transition: background 0.2s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-transform: capitalize; }
+
+.hl {
+  background-color: #25B7D3; }
+
+.categories {
+  display: inline;
+  padding-left: 10px;
+  font-size: 0.9rem; }
+  .categories li {
+    display: inline-block; }
+  .categories a {
+    color: white !important;
+    display: block;
+    padding: 10px; }
+  .categories a:hover {
+    background-color: #777C84; }
+
+.categories--title {
+  display: inline-block;
+  font-size: 1.5rem; }
+
+.homepage {
+  background-color: #eee;
+  overflow: hidden; }
+
+.homepage-container {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.homepage h1 {
+  font-size: 1.6rem;
+  padding: 10px; }
+
+.game-tag {
+  display: inline-block;
+  width: 160px;
+  height: 245px;
+  margin: 15px; }
+  .game-tag img {
+    width: 125px;
+    height: 125px;
+    margin: 10%;
+    margin-bottom: 0;
+    border-radius: 10px;
+    border: 1px solid lightgray; }
+  .game-tag h2 {
+    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding: 0 5px 0 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; }
+  .game-tag h3 {
+    display: block;
+    font-size: 0.75rem;
+    color: #4D4D4D;
+    padding-left: 10px;
+    font-family: 'Catamaran', sans-serif;
+    max-width: 140px;
+    max-height: 35px;
+    overflow: hidden;
+    padding-top: 5px; }
+  .game-tag p {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    padding: 5px;
+    padding-left: 10px; }
+    .game-tag p i {
+      font-size: 0.9rem; }
+
+.card-content {
+  max-height: 80px;
+  overflow: hidden; }
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0; }
+
+@media only screen and (max-width: 599px) {
+  html {
+    font-size: 13px; }
+  .logo, .profile-pic {
+    width: 40px;
+    height: 40px; }
+  .form--nav {
+    width: 60%; }
+    .form--nav .container {
+      padding: 0; }
+    .form--nav button {
+      margin: 0; }
+  .game-tags {
+    padding: 0;
+    grid-template-columns: 50% 50%; }
+  .dropdown-item {
+    max-width: 200px;
+    overflow: hidden; }
+  .game-tag h2 {
+    padding-top: 10px; }
+  .game-tag h3 {
+    font-size: 0.9rem; }
+  .homepage-container {
+    padding-left: 5px;
+    padding-right: 5px; } }
