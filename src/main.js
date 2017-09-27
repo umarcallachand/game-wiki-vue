@@ -9,6 +9,34 @@ Vue.config.productionTip = false
 
 Vue.use(VueFire)
 
+Vue.component('GameContent', {
+  props: [
+    'GameName',
+    'GameSummary',
+    'GameDate',
+    'Rating'
+  ],
+  template: `
+  <div>
+    <div class="card-content">
+      <h2>{{GameName}}</h2>
+      <h3>{{GameSummary}}</h3>
+      <h3><strong>Release Year:</strong> {{GameDate}}</h3>
+    </div>
+
+  </div>
+  `
+});
+
+Vue.component('GameImage', {
+  props: [
+    'GameUrl'
+  ],
+  template: `
+  <img class="game-tag--cover" :src="GameUrl" alt=Alternative></img>
+  `
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

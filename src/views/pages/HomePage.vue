@@ -6,6 +6,7 @@
 
     <CategoryTop></CategoryTop>
 
+    <CategoryNewest></CategoryNewest>
 
   </body>
 
@@ -15,11 +16,13 @@
 <script>
 import Navbar from '../components/Navbar'
 import CategoryTop from '../components/CategoryTop'
+import CategoryNewest from '../components/CategoryNewest'
 
 export default {
   components: {
     Navbar,
-    CategoryTop
+    CategoryTop,
+    CategoryNewest
   }
 }
 

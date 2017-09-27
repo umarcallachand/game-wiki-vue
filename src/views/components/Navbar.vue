@@ -13,9 +13,9 @@
 
         <input class="form-control search--input" id="search--input" type="text" placeholder="Search" aria-label="Search" />
         <ul class="search-menu">
+          <!-- <li class="dropdown-item">Some dropdown</li>
           <li class="dropdown-item">Some dropdown</li>
-          <li class="dropdown-item">Some dropdown</li>
-          <li class="dropdown-item">Some dropdown</li>
+          <li class="dropdown-item">Some dropdown</li> -->
 
         </ul>
 
