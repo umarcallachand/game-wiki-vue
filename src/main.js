@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import VueFire from 'vuefire'
 
+
 Vue.config.productionTip = false
 
 Vue.use(VueFire)
@@ -18,23 +19,37 @@ Vue.component('GameContent', {
   ],
   template: `
   <div>
+
     <div class="card-content">
-      <h2>{{GameName}}</h2>
-      <h3>{{GameSummary}}</h3>
-      <h3><strong>Release Year:</strong> {{GameDate}}</h3>
+      <h2 @click="detail">{{GameName}}</h2>
+      <h3 @click="detail">{{GameSummary}}</h3>
+      <h3 @click="detail"><strong>Release Year:</strong> {{GameDate}}</h3>
     </div>
 
   </div>
-  `
+  `,
+  methods: {
+    detail: function(){
+      localStorage.setItem('GameName', this.GameName)
+      window.location.href = '../#/details'
+    }
+  }
 });
 
 Vue.component('GameImage', {
   props: [
-    'GameUrl'
+    'GameUrl',
+    'GameName'
   ],
   template: `
-  <img class="game-tag--cover" :src="GameUrl" alt=Alternative></img>
-  `
+  <img class="game-tag--cover" :src="GameUrl" alt=Alternative @click="detail"></img>
+  `,
+  methods: {
+    detail: function(){
+      localStorage.setItem('GameName', this.GameName)
+      window.location.href = '../#/details'
+    }
+  }
 });
 
 /* eslint-disable no-new */
