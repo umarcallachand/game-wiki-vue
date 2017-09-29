@@ -31,7 +31,7 @@ Vue.component('GameContent', {
   methods: {
     detail: function(){
       localStorage.setItem('GameName', this.GameName)
-      window.location.href = '../#/details'
+      window.location.href = '../#/details/' + (this.GameName).toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'')
     }
   }
 });
@@ -47,7 +47,7 @@ Vue.component('GameImage', {
   methods: {
     detail: function(){
       localStorage.setItem('GameName', this.GameName)
-      window.location.href = '../#/details'
+      window.location.href = '../#/details/' + (this.GameName).toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'')
     }
   }
 });

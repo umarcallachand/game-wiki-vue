@@ -20,27 +20,27 @@ export default {
   data() {
     return {
       slickOptions: {
-              variableWidth: true,
-      infinite: true,
-      speed: 500,
-      slidesToScroll: 3,
-      arrows: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToScroll: 2,
+        variableWidth: true,
+        infinite: true,
+        speed: 500,
+        slidesToScroll: 3,
+        arrows: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToScroll: 2,
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToScroll: 1,
+            }
           }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToScroll: 1,
-          }
+        ]
         }
-      ]
       }
-    }
   },
   props: [
 

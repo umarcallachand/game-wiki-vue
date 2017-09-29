@@ -23,14 +23,23 @@ export default {
     Navbar,
     CategoryTop,
     CategoryNewest
+  },
+  data() {
+    return {
+      hasLoaded: true
+    }
+  },
+  methods: {
+    isLoading: setTimeout(() => {this.hasLoaded = false}, 2000)
   }
+
 }
 
 </script>
 
 
 
-<style scoped>
+<style lang="scss">
   .list {
     width: 100%;
     padding: 0;

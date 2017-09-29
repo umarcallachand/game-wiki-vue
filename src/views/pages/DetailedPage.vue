@@ -1,13 +1,13 @@
 
 <template>
 <div>
-  <div class="showbox" v-if="Games.length < 1">
-  <div class="loader">
-    <svg class="circular" viewBox="25 25 50 50">
-      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-    </svg>
+  <div class="showbox" v-if="Games.length < 25">
+    <div class="loader">
+      <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+      </svg>
+    </div>
   </div>
-</div>
 
   <body v-if="Games.length > 1">
 
@@ -95,7 +95,7 @@ export default {
     Games: something.ref('/')
   },
 
-  name: "GameTag",
+  name: "DetailedPage",
 
   props: [
     'GameID', 'Game'
@@ -289,5 +289,9 @@ $width: 100px;
     .top {
       flex-direction: column;
     }
+    .showbox {
+      top: 30%;
+    }
+
   }
 </style>

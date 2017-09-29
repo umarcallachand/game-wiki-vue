@@ -29,32 +29,32 @@
     <div class="rgba-stylish-light">
 
       <ul class="categories">
-        <li>
-          <router-link to="/action">Action</router-link>
+        <li @click="detail('e','action')">
+          <router-link to="/category/action">Action</router-link>
         </li>
 
-        <li>
-          <router-link to="/adventure">Adventure</router-link>
+        <li @click="detail('e','adventure')">
+          <router-link to="/category/adventure">Adventure</router-link>
         </li>
 
-        <li>
-          <router-link to="/arcade">Arcade</router-link>
+        <li @click="detail('e','arcade')">
+          <router-link to="/category/arcade">Arcade</router-link>
         </li>
 
-        <li>
-          <router-link to="/cade">Card</router-link>
+        <li @click="detail('e','card')">
+          <router-link to="/category/card">Card</router-link>
         </li>
 
-        <li>
-          <router-link to="/educational">Educational</router-link>
+        <li @click="detail('e','educational')">
+          <router-link router-link-active="active" to="/category/educational">Educational</router-link>
         </li>
 
-        <li>
-          <router-link to="/racing">Racing</router-link>
+        <li @click="detail('e','racing')">
+          <router-link to="/category/racing">Racing</router-link>
         </li>
 
-        <li>
-          <router-link to="/strategy">Strategy</router-link>
+        <li @click="detail('e','strategy')">
+          <router-link to="/category/strategy">Strategy</router-link>
         </li>
 
       </ul>
@@ -69,14 +69,24 @@
 <script>
 
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+
+  methods: {
+    detail: function(e, category){
+      localStorage.setItem('Category', category)
+      document.location.reload()
+    }
+  }
 }
 
 
 </script>
 
 
-<style lang="sass">
+<style lang="scss">
 
+  .active {
+    background: black;
+  }
 
 </style>

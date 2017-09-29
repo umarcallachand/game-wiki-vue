@@ -5,13 +5,13 @@
   <!-- Top category -->
   <div class="card game-tag" v-if="Games.length > 1 && Category === 'Top' && Games[GameID]['rating'] > 3">
 
-      <GameImage :GameUrl="Games[GameID]['cover']['url']" :GameName="Games[GameID]['name']"></GameImage>
+    <GameImage :GameUrl="Games[GameID]['cover']['url']" :GameName="Games[GameID]['name']"></GameImage>
 
-      <GameContent :GameName="Games[GameID]['name']" :GameSummary="Games[GameID]['summary'].substr(0, 40) + '...'" :GameDate="Games[GameID]['release_dates'][0]['human'].substr(0, 4)" :Rating="Games[GameID]['rating']"></GameContent>
+    <GameContent :GameName="Games[GameID]['name']" :GameSummary="Games[GameID]['summary'].substr(0, 40) + '...'" :GameDate="Games[GameID]['release_dates'][0]['human'].substr(0, 4)" :Rating="Games[GameID]['rating']"></GameContent>
 
-      <p>
-        <i v-for="game in Games[GameID]['rating']" :key="game['id']" class="fa fa-star" aria-hidden="true"></i><i v-for="game in (5 - Games[GameID]['rating'])" :key="game['id']" class="fa fa-star-o" aria-hidden="true"></i>
-      </p>
+    <p>
+      <i v-for="game in Games[GameID]['rating']" :key="game['id']" class="fa fa-star" aria-hidden="true"></i><i v-for="game in (5 - Games[GameID]['rating'])" :key="game['id']" class="fa fa-star-o" aria-hidden="true"></i>
+    </p>
 
 
   </div>
@@ -20,18 +20,27 @@
   <!-- Newest category -->
   <div class="card game-tag" v-else-if="Games.length > 1 && Category === 'Newest' && parseInt(Games[GameID]['release_dates'][0]['human'].substr(0, 4)) > 2010 ">
 
-    <router-link to="/details">
-      <GameImage :GameUrl="Games[GameID]['cover']['url']" :GameName="Games[GameID]['name']"></GameImage>
+    <GameImage :GameUrl="Games[GameID]['cover']['url']" :GameName="Games[GameID]['name']"></GameImage>
 
-      <GameContent :GameName="Games[GameID]['name']" :GameSummary="Games[GameID]['summary'].substr(0, 40) + '...'" :GameDate="Games[GameID]['release_dates'][0]['human'].substr(0, 4)" :Rating="Games[GameID]['rating']"></GameContent>
+    <GameContent :GameName="Games[GameID]['name']" :GameSummary="Games[GameID]['summary'].substr(0, 40) + '...'" :GameDate="Games[GameID]['release_dates'][0]['human'].substr(0, 4)" :Rating="Games[GameID]['rating']"></GameContent>
 
-      <p>
-        <i v-for="game in Games[GameID]['rating']" :key="game['id']" class="fa fa-star" aria-hidden="true"></i><i v-for="game in (5 - Games[GameID]['rating'])" :key="game['id']" class="fa fa-star-o" aria-hidden="true"></i>
-      </p>
-    </router-link>
+    <p>
+      <i v-for="game in Games[GameID]['rating']" :key="game['id']" class="fa fa-star" aria-hidden="true"></i><i v-for="game in (5 - Games[GameID]['rating'])" :key="game['id']" class="fa fa-star-o" aria-hidden="true"></i>
+    </p>
 
   </div>
 
+<!-- CAtegory Page -->
+  <div style="display: inline-block" class="card game-tag" v-else-if="Games.length > 1 && Category === 'Category'">
+
+    <GameImage :GameUrl="Game['cover']['url']" :GameName="Game['name']"></GameImage>
+
+    <GameContent :GameName="Game['name']" :GameSummary="Game['summary'].substr(0, 40) + '...'" :GameDate="Game['release_dates'][0]['human'].substr(0, 4)" :Rating="Game['rating']"></GameContent>
+
+    <p>
+      <i v-for="game in Game['rating']" :key="game['id']" class="fa fa-star" aria-hidden="true"></i><i v-for="game in (5 - Game['rating'])" :key="game['id']" class="fa fa-star-o" aria-hidden="true"></i>
+    </p>
+  </div>
 
 
 </div>
@@ -62,7 +71,7 @@ export default {
   name: "GameTag",
 
   props: [
-    'GameID', 'Category'
+    'GameID', 'Category', 'Game'
   ],
 
 
